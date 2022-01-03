@@ -9,7 +9,7 @@ export const AppContainer = styled.div`
   height: 100vh;
 `
 
-export const LoginForm = styled.form`
+export const SignInForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,7 +84,7 @@ export const ShowPasswordLabel = styled.label`
   margin-left: 5px;
 `
 
-export const LoginButton = styled.button`
+export const SignInButton = styled.button`
   color: #ffffff;
   background-color: #228b22;
   font-family: 'Roboto';

@@ -4,14 +4,14 @@ import {Redirect} from 'react-router-dom'
 
 import {
   AppContainer,
-  LoginForm,
+  SignInForm,
   InputContainer,
   InputLabel,
   InputField,
   CheckboxInputContainer,
   CheckboxInput,
   ShowPasswordLabel,
-  LoginButton,
+  SignInButton,
   ErrorMessage,
   SignInHeader,
   SignInContainer,
@@ -19,7 +19,7 @@ import {
   CreateAccount,
 } from './styledComponents'
 
-class Login extends Component {
+class SignIn extends Component {
   state = {
     userNameInput: '',
     passwordInput: '',
@@ -110,7 +110,7 @@ class Login extends Component {
     event.preventDefault()
     const {userNameInput, passwordInput} = this.state
     const userDetails = {username: userNameInput, password: passwordInput}
-    const url = 'https://apis.ccbp.in/login'
+    const url = 'https://apis.ccbp.in/SignIn'
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
@@ -133,13 +133,13 @@ class Login extends Component {
     return (
       <AppContainer>
         <SignInHeader>Sign in to your Account</SignInHeader>
-        <LoginForm onSubmit={this.onSubmitForm}>
+        <SignInForm onSubmit={this.onSubmitForm}>
           {this.renderUsernameInputField()}
           {this.renderPasswordInputField()}
           {this.renderShowPasswordCheckboxField()}
-          <LoginButton type="submit">Sign in</LoginButton>
+          <SignInButton type="submit">Sign in</SignInButton>
           {showSubmitError && <ErrorMessage>*{errorMsg}</ErrorMessage>}
-        </LoginForm>
+        </SignInForm>
         <SignInContainer>
           <NewUser>New user?</NewUser>
           <CreateAccount href="">Create an account</CreateAccount>
@@ -149,4 +149,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default SignIn
