@@ -1,0 +1,25 @@
+[
+  {
+    "question_id": "60a6150e-07fc-4b8c-b99a-a0bd0fa950c0",
+    "ide_session_id": "4bda8591-8198-499b-8fae-e3e5e01a61bc",
+    "short_text": "Nxt Watch",
+    "question_key": "nxt_watch_1",
+    "question_text": "Will be automatically generated",
+    "content_type": "MARKDOWN",
+    "toughness": "EASY",
+    "language": "ENGLISH",
+    "question_type": "IDE_BASED_CODING",
+    "question_asked_by_companies_info": [],
+    "question_format": "CODING_PRACTICE",
+    "test_cases": [
+      {
+        "test_case_enum": "RJSCPYKKV8_TEST_1",
+        "display_text": "Page should render the teamsList data as a list containing a unique key as a prop for each team in Home Route",
+        "weightage": 5
+      }
+    ],
+    "multimedia": [],
+    "solutions_metadata": [],
+    "hints": []
+  }
+]
