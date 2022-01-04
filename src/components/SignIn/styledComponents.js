@@ -6,7 +6,7 @@ export const AppContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #003366;
-  height: 100vh;
+  min-height: 100vh;
 `
 
 export const SignInForm = styled.form`
@@ -129,11 +129,9 @@ export const SignInContainer = styled.div`
   max-width: 350px;
   border-radius: 8px;
   box-shadow: '0px 8px 40px #ebebeb';
-  padding: 16px 8px 16px 8px;
   margin-top: 20px;
   @media screen and (min-width: 768px) {
     max-width: 450px;
-    padding: 32px;
   }
 `
 

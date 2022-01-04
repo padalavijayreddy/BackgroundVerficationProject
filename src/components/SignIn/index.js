@@ -8,9 +8,6 @@ import {
   InputContainer,
   InputLabel,
   InputField,
-  CheckboxInputContainer,
-  CheckboxInput,
-  ShowPasswordLabel,
   SignInButton,
   ErrorMessage,
   SignInHeader,
@@ -21,50 +18,96 @@ import {
 
 class SignIn extends Component {
   state = {
+    nameInput: '',
     userNameInput: '',
+    emailAddressInput: '',
     passwordInput: '',
+    confirmPasswordInput: '',
     showSubmitError: false,
-    showPassword: false,
     errorMsg: '',
   }
 
-  onChangeShowPassword = () => {
-    this.setState(prevState => ({showPassword: !prevState.showPassword}))
+  onChangeNameInput = event => {
+    this.setState({nameInput: event.target.value})
   }
 
-  renderShowPasswordCheckboxField = () => {
-    const {showPassword} = this.state
+  onChangeUsernameInput = event => {
+    this.setState({userNameInput: event.target.value})
+  }
 
-    return (
-      <CheckboxInputContainer>
-        <CheckboxInput
-          type="checkbox"
-          id="showPassword"
-          onChange={this.onChangeShowPassword}
-          checked={showPassword}
-        />
-        <ShowPasswordLabel htmlFor="showPassword">
-          Show Password
-        </ShowPasswordLabel>
-      </CheckboxInputContainer>
-    )
+  onChangeEmailAddressInput = event => {
+    this.setState({emailAddressInput: event.target.value})
   }
 
   onChangePasswordInput = event => {
     this.setState({passwordInput: event.target.value})
   }
 
+  onChangeConfirmPasswordInput = event => {
+    this.setState({confirmPasswordInput: event.target.value})
+  }
+
+  renderNameInputField = () => {
+    const {nameInput} = this.state
+
+    return (
+      <InputContainer>
+        <InputLabel htmlFor="nameInput">Name</InputLabel>
+        <InputField
+          type="text"
+          id="nameInput"
+          value={nameInput}
+          onChange={this.onChangeNameInput}
+          placeholder="Enter your Full Name"
+        />
+      </InputContainer>
+    )
+  }
+
+  renderUsernameInputField = () => {
+    const {userNameInput} = this.state
+
+    return (
+      <InputContainer>
+        <InputLabel htmlFor="userNameInput">Username</InputLabel>
+        <InputField
+          type="text"
+          id="userNameInput"
+          value={userNameInput}
+          onChange={this.onChangeUsernameInput}
+          placeholder="Enter your Username"
+        />
+      </InputContainer>
+    )
+  }
+
+  renderEmailAddressInputField = () => {
+    const {emailAddressInput} = this.state
+
+    return (
+      <InputContainer>
+        <InputLabel htmlFor="emailAddressInput">Email address</InputLabel>
+        <InputField
+          type="text"
+          id="emailAddressInput"
+          value={emailAddressInput}
+          onChange={this.onChangeEmailAddressInput}
+          placeholder="Enter your email address"
+        />
+      </InputContainer>
+    )
+  }
+
   renderPasswordInputField = () => {
-    const {password, showPassword} = this.state
-    const passwordType = showPassword ? 'text' : 'password'
+    const {passwordInput} = this.state
 
     return (
       <InputContainer>
         <InputLabel htmlFor="passwordInput">Password</InputLabel>
         <InputField
-          type={passwordType}
+          type="password"
           id="passwordInput"
-          value={password}
+          value={passwordInput}
           onChange={this.onChangePasswordInput}
           placeholder="Enter your Password"
         />
@@ -72,22 +115,18 @@ class SignIn extends Component {
     )
   }
 
-  onChangeUsernameInput = event => {
-    this.setState({userNameInput: event.target.value})
-  }
-
-  renderUsernameInputField = () => {
-    const {username} = this.state
+  renderConfirmPasswordInputField = () => {
+    const {confirmPasswordInput} = this.state
 
     return (
       <InputContainer>
-        <InputLabel htmlFor="userNameInput">Email address</InputLabel>
+        <InputLabel htmlFor="confirmPasswordInput">Confirm Password</InputLabel>
         <InputField
-          type="text"
-          id="userNameInput"
-          value={username}
-          onChange={this.onChangeUsernameInput}
-          placeholder="Enter your email address"
+          type="password"
+          id="confirmPasswordInput"
+          value={confirmPasswordInput}
+          onChange={this.onChangeConfirmPasswordInput}
+          placeholder="Enter your Confirm Password"
         />
       </InputContainer>
     )
@@ -132,18 +171,20 @@ class SignIn extends Component {
     }
     return (
       <AppContainer>
-        <SignInHeader>Sign in to your Account</SignInHeader>
+        <SignInHeader>Register your Account</SignInHeader>
         <SignInForm onSubmit={this.onSubmitForm}>
+          {this.renderNameInputField()}
           {this.renderUsernameInputField()}
+          {this.renderEmailAddressInputField()}
           {this.renderPasswordInputField()}
-          {this.renderShowPasswordCheckboxField()}
-          <SignInButton type="submit">Sign in</SignInButton>
+          {this.renderConfirmPasswordInputField()}
+          <SignInButton type="submit">Sign up</SignInButton>
           {showSubmitError && <ErrorMessage>*{errorMsg}</ErrorMessage>}
+          <SignInContainer>
+            <NewUser>Already have an account?</NewUser>
+            <CreateAccount href="">Sign in</CreateAccount>
+          </SignInContainer>
         </SignInForm>
-        <SignInContainer>
-          <NewUser>New user?</NewUser>
-          <CreateAccount href="">Create an account</CreateAccount>
-        </SignInContainer>
       </AppContainer>
     )
   }
