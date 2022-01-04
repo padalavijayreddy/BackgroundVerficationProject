@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 export const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #003366;
+  background-color: #3175c9;
   height: 100vh;
 `
 
@@ -143,7 +144,7 @@ export const NewUser = styled.p`
   margin: 5px;
 `
 
-export const CreateAccount = styled.a`
+export const CreateAccount = styled(Link)`
   font-size: 20px;
   color: #003366;
   margin: 5px;

@@ -182,7 +182,7 @@ class SignIn extends Component {
           {showSubmitError && <ErrorMessage>*{errorMsg}</ErrorMessage>}
           <SignInContainer>
             <NewUser>Already have an account?</NewUser>
-            <CreateAccount href="">Sign in</CreateAccount>
+            <CreateAccount to="/login">Sign in</CreateAccount>
           </SignInContainer>
         </SignInForm>
       </AppContainer>

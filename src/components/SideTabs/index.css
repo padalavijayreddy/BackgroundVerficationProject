@@ -1,0 +1,41 @@
+.tab-item {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.highlight-circle {
+  background-color: #3175c9;
+  color: #d5e2f1;
+}
+
+.circle {
+  background-color: transparent;
+}
+
+.button-class {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border: 2px solid #dee5e7;
+  outline: none;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.tab-name {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  line-height: 45px;
+  font-family: 'Roboto';
+  color: gray;
+  cursor: pointer;
+}
+
+.highlight-name {
+  font-weight: 600;
+}
+
+.name {
+  font-weight: 400;
+}

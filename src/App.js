@@ -15,12 +15,6 @@ class App extends Component {
         <Route exact path="/login" component={Login} />
         <Route exact path="/sign-in" component={SignIn} />
         <ProtectedRoute exact path="/" component={Home} />
-        {/* <ProtectedRoute exact path="/trending" component={Trending} />
-        <ProtectedRoute exact path="/gaming" component={Gaming} />
-        <ProtectedRoute exact path="/saved-videos" component={SavedVideos} />
-        <ProtectedRoute exact path="/videos/:id" component={VideoItemDetails} /> */}
-        {/* <Route exact path="/not-found" component={NotFound} /> */}
-        {/* <Redirect to="not-found" /> */}
       </Switch>
     )
   }

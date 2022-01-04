@@ -21,7 +21,7 @@ import {
 
 class Login extends Component {
   state = {
-    userNameInput: '',
+    emailAddressInput: '',
     passwordInput: '',
     showSubmitError: false,
     showPassword: false,
@@ -72,21 +72,21 @@ class Login extends Component {
     )
   }
 
-  onChangeUsernameInput = event => {
-    this.setState({userNameInput: event.target.value})
+  onChangeEmailAddressInput = event => {
+    this.setState({emailAddressInput: event.target.value})
   }
 
-  renderUsernameInputField = () => {
-    const {username} = this.state
+  renderEmailAddressInputField = () => {
+    const {emailAddressInput} = this.state
 
     return (
       <InputContainer>
-        <InputLabel htmlFor="userNameInput">Email address</InputLabel>
+        <InputLabel htmlFor="emailAddressInput">Email address</InputLabel>
         <InputField
           type="text"
-          id="userNameInput"
-          value={username}
-          onChange={this.onChangeUsernameInput}
+          id="emailAddressInput"
+          value={emailAddressInput}
+          onChange={this.onChangeEmailAddressInput}
           placeholder="Enter your email address"
         />
       </InputContainer>
@@ -108,8 +108,8 @@ class Login extends Component {
 
   onSubmitForm = async event => {
     event.preventDefault()
-    const {userNameInput, passwordInput} = this.state
-    const userDetails = {username: userNameInput, password: passwordInput}
+    const {emailAddressInput, passwordInput} = this.state
+    const userDetails = {username: emailAddressInput, password: passwordInput}
     const url = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',
@@ -134,7 +134,7 @@ class Login extends Component {
       <AppContainer>
         <SignInHeader>Sign in to your Account</SignInHeader>
         <LoginForm onSubmit={this.onSubmitForm}>
-          {this.renderUsernameInputField()}
+          {this.renderEmailAddressInputField()}
           {this.renderPasswordInputField()}
           {this.renderShowPasswordCheckboxField()}
           <LoginButton type="submit">Sign in</LoginButton>
@@ -142,7 +142,7 @@ class Login extends Component {
         </LoginForm>
         <SignInContainer>
           <NewUser>New user?</NewUser>
-          <CreateAccount href="">Create an account</CreateAccount>
+          <CreateAccount to="/sign-in">Create an account</CreateAccount>
         </SignInContainer>
       </AppContainer>
     )
