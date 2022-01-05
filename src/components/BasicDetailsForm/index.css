@@ -1,0 +1,61 @@
+.formContainer {
+}
+
+.header-text {
+  font-size: 16px;
+  line-height: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 400;
+}
+
+.basic-form {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.label-text {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  color: #58666e;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.text-danger {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ed2424;
+}
+
+.form-control {
+  border-radius: 2px;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #cfdadd;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.radio {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 7px;
+}
+
+.radio label {
+  min-height: 20px;
+  margin-bottom: 0;
+  font-weight: 400;
+  cursor: pointer;
+}

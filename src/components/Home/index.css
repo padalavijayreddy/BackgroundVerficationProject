@@ -29,6 +29,7 @@
 .form-view-container {
   margin-left: 100px;
   background-color: #ffffff;
+  width: calc(100% - 340px);
 }
 
 .loader-container {
