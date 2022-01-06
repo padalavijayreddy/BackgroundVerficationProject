@@ -29,6 +29,14 @@
   font-size: 14px;
 }
 
+.label-text-radio {
+  display: inline-block;
+  max-width: 100%;
+  color: #58666e;
+  font-weight: 500;
+  font-size: 14px;
+}
+
 .text-danger {
   font-size: 16px;
   font-weight: 700;
@@ -47,10 +55,18 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.radio {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 7px;
+.radio-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.each-radio {
+  display: flex;
+}
+
+.radio-input {
+  margin-top: 1px;
+  margin-right: 4px;
 }
 
 .radio label {
