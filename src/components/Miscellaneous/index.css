@@ -1,0 +1,12 @@
+.another-gap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.add-button {
+  border: none;
+  outline: none;
+  color: #3175c9;
+  background-color: transparent;
+}
